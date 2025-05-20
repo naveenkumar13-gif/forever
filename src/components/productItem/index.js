@@ -8,7 +8,7 @@ function ProductItem({ id, name, price, image }) {
         <img
           src={image[0]}
           alt={name}
-          className="hover:scale-110 transition-all duration-500 w-full h-80 object-cover"
+          className="hover:scale-110 transition-all duration-500 w-full h-full object-contain"
         />
       </div>
       <p className="font-semibold pt-3 pb-1 text-sm">{name}</p>
