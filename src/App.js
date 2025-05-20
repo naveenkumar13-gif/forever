@@ -13,7 +13,7 @@ import Navbar from "./components/navbar";
 
 function App() {
   return (
-    <div className="px-10 py-5 max-sm:px-5 max-sm:py-2">
+    <div className="px-20 py-5 max-sm:px-5 max-sm:py-2">
       <BrowserRouter>
         <Navbar />
         <Routes>
