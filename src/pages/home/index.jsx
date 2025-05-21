@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Hero from "../../components/hero/index";
-import Collection from "../collection";
 import BestSeller from "../../components/bestSeller";
 import OurPolicy from "../../components/ourpolicy";
 import NewSletterBox from "../../components/newsletter";
+import LeatestCollection from "../../components/letestCollection";
 
 function Home() {
   const [opacity, setOpacity] = useState(false);
@@ -15,7 +15,7 @@ function Home() {
       }`}
     >
       <Hero />
-      <Collection />
+      <LeatestCollection />
       <BestSeller />
       <OurPolicy />
       <NewSletterBox />
