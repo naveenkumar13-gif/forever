@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { assets } from "../../assets/assets";
 import { Link, NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ showSearch, setShowSearch }) {
   const [visible, setVisible] = useState(false);
   return (
     <div className="flex justify-between items-center  font-medium max-sm:mt-4 my-5">
@@ -39,7 +39,12 @@ function Navbar() {
         </NavLink>
       </ul>
       <div className="flex items-center gap-6">
-        <img src={assets.search_icon} alt="" className="w-5 cursor-pointer " />
+        <img
+          src={assets.search_icon}
+          alt=""
+          className="w-5 cursor-pointer "
+          onClick={() => setShowSearch(true)}
+        />
         <div className="group relative">
           <img
             src={assets.profile_icon}

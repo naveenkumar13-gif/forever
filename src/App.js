@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/home/index";
 import Collection from "./pages/collection/index";
@@ -13,6 +13,7 @@ import Navbar from "./components/navbar";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import Footer from "./components/footer";
+import SearchBar from "./components/searchBar";
 
 // Initialize AOS when the app loads
 function InitializeAOS() {
@@ -40,12 +41,14 @@ function AOSWrapper({ children }) {
 }
 
 function App() {
+  const [showSearch, setShowSearch] = useState(false);
   return (
     <div className="px-20  max-sm:px-5 max-sm:py-2">
       <BrowserRouter>
         <InitializeAOS />
         <AOSWrapper>
-          <Navbar />
+          <Navbar  showSearch={showSearch} setShowSearch={setShowSearch}/>
+          <SearchBar showSearch={showSearch} setShowSearch={setShowSearch} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/collection" element={<Collection />} />
