@@ -41,7 +41,6 @@ function Collection() {
       );
     }
 
-  
     if (sortOption === "low-high") {
       filtered = [...filtered].sort((a, b) => a.price - b.price);
     } else if (sortOption === "high-low") {
@@ -52,8 +51,7 @@ function Collection() {
   }, [category, subCategories, sortOption]);
 
   return (
-    <div className="flex justify-between gap-10 pt-10 border-t">
-  
+    <div className="flex justify-between gap-10 pt-10 border-t max-sm:flex-col max-sm:gap-0">
       <div className="flex flex-col gap-1">
         <div className="min-w-60">
           <p
@@ -93,7 +91,7 @@ function Collection() {
           <div
             className={`border border-gray-300 pl-5 py-3 my-5 ${
               showFilter ? "" : "hidden"
-            } sm:block`}
+            } sm:block `}
           >
             <p className="mb-3 text-sm font-medium">TYPE</p>
             <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
@@ -114,10 +112,10 @@ function Collection() {
         </div>
       </div>
       <div className="flex-1">
-        <div className="flex justify-between text-base mb-4">
+        <div className="flex justify-between text-2xl mb-4 max-sm:flex-col max-sm:items-center max-sm:mb-8">
           <Title text1={"ALL"} text2={"COLLECTIONS"} />
           <select
-            className="border-2 border-gray-400 text-sm px-2"
+            className="border-2 border-gray-400 text-sm px-2 "
             value={sortOption}
             onChange={(e) => setSortOption(e.target.value)}
           >
@@ -127,7 +125,7 @@ function Collection() {
           </select>
         </div>
 
-        <div className="grid grid-cols-5 gap-4 gap-y-6 max-sm:grid-cols-2">
+        <div className="grid grid-cols-5 gap-4 gap-y-6 max-sm:grid-cols-2 max-md:grid-cols-3">
           {filterProduct.length > 0 ? (
             filterProduct.map((item, index) => (
               <ProductItem
