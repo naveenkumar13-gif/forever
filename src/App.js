@@ -11,18 +11,18 @@ import PlaceOrder from "./pages/placeOrder/index";
 import Orders from "./pages/orders/index";
 import Navbar from "./components/navbar";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css";
 import Footer from "./components/footer";
 import SearchBar from "./components/searchBar";
 
-// Initialize AOS when the app loads
+
 function InitializeAOS() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration (ms)
-      easing: "ease-in-out", // Easing type
-      once: false, // Animate only once
-      disable: "mobile", // Disable on mobile (optional)
+      duration: 1000, 
+      easing: "ease-in-out", 
+      once: false, 
+      disable: "mobile", 
     });
   }, []);
 
@@ -42,16 +42,28 @@ function AOSWrapper({ children }) {
 
 function App() {
   const [showSearch, setShowSearch] = useState(false);
+    const [search, setSearch] = useState("");
+  
   return (
     <div className="px-20  max-sm:px-5 max-sm:py-2">
       <BrowserRouter>
         <InitializeAOS />
         <AOSWrapper>
-          <Navbar  showSearch={showSearch} setShowSearch={setShowSearch}/>
-          <SearchBar showSearch={showSearch} setShowSearch={setShowSearch} />
+          <Navbar showSearch={showSearch} setShowSearch={setShowSearch} />
+          <SearchBar showSearch={showSearch} setShowSearch={setShowSearch} search={search} setSearch={setSearch} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/collection" element={<Collection />} />
+            <Route
+              path="/collection"
+              element={
+                <Collection
+                  showSearch={showSearch}
+                  setShowSearch={setShowSearch}
+                  search={search}
+                  setSearch={setSearch}
+                />
+              }
+            />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/product/:id" element={<Product />} />

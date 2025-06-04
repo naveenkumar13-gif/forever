@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 function Footer() {
   return (
     <div>
-      <div className=" gap-14 max-sm:my-10 text-sm mb-10 mt-40 grid grid-cols-[3fr_1fr_1fr] max-md:grid-cols-[1fr_1fr] max-sm:grid-cols-[1fr]">
+      <div className=" gap-14 max-sm:my-10 text-sm mb-10 mt-40 grid grid-cols-[3fr_1fr_1fr] max-md:grid-cols-[1fr_1fr] max-sm:grid-cols-[1fr] ">
         <div>
           <img src={assets.logo} className="mb-5 w-32" alt="logo" />
           <p className="text-gray-600 w-2/3 max-sm:w-full">

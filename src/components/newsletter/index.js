@@ -19,7 +19,7 @@ function NewSletterBox() {
         className="w-1/2 max-sm:w-full flex items-center gap-4 mx-auto my-6 border pl-3 "
       >
         <input
-          type="text"
+          type="email"
           placeholder="Enter your email address"
           className="rounded-lg  focus:outline-none w-full sm:flex-1 "
           required

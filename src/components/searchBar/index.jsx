@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import { useLocation } from "react-router-dom";
 
-function SearchBar({ showSearch, setShowSearch }) {
-  const [search, setSearch] = useState("");
-  const [visible, setVisible] = useState(false);
+function SearchBar({ showSearch, setShowSearch, search, setSearch }) {
+   const [visible, setVisible] = useState(false);
   const location = useLocation();
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import { assets, products } from "../../assets/assets";
 import Title from "../../components/title";
 import ProductItem from "../../components/productItem";
 
-function Collection() {
+function Collection({ showSearch, search }) {
   const [showFilter, setShowFilter] = useState(false);
   const [filterProduct, setFilterProduct] = useState([]);
   const [category, setCategory] = useState([]);
@@ -31,6 +31,12 @@ function Collection() {
   useEffect(() => {
     let filtered = products;
 
+    if (showSearch && search) {
+      filtered = filtered.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
     if (category.length > 0) {
       filtered = filtered.filter((item) => category.includes(item.category));
     }
@@ -48,7 +54,12 @@ function Collection() {
     }
 
     setFilterProduct(filtered);
-  }, [category, subCategories, sortOption]);
+  }, [category, subCategories, sortOption, showSearch, search]);
+  useEffect(() => {
+    if (showSearch) {
+      setShowFilter(false);
+    }
+  }, [showSearch]);
 
   return (
     <div className="flex justify-between gap-10 pt-10 border-t max-sm:flex-col max-sm:gap-0">
@@ -145,6 +156,5 @@ function Collection() {
       </div>
     </div>
   );
-}
-
+} 
 export default Collection;
