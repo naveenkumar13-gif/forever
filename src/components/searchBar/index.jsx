@@ -3,10 +3,11 @@ import { assets } from "../../assets/assets";
 import { useLocation } from "react-router-dom";
 
 function SearchBar({ showSearch, setShowSearch, search, setSearch }) {
-   const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
+  
     setVisible(location.pathname.includes("/collection") && showSearch);
   }, [location.pathname, showSearch]);
 
@@ -24,7 +25,7 @@ function SearchBar({ showSearch, setShowSearch, search, setSearch }) {
       </div>
       <img
         src={assets.cross_icon}
-        alt="serah"
+        alt="Search"
         className="w-4 inline cursor-pointer"
         onClick={() => setShowSearch(false)}
       />

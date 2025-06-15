@@ -29,7 +29,7 @@ function Collection({ showSearch, search }) {
   };
 
   useEffect(() => {
-    let filtered = products;
+    let filtered = products.slice();
 
     if (showSearch && search) {
       filtered = filtered.filter((item) =>
@@ -156,5 +156,5 @@ function Collection({ showSearch, search }) {
       </div>
     </div>
   );
-} 
+}
 export default Collection;

@@ -6,14 +6,8 @@ import NewSletterBox from "../../components/newsletter";
 import LeatestCollection from "../../components/letestCollection";
 
 function Home() {
-  const [opacity, setOpacity] = useState(false);
-  useEffect(() => setOpacity(true), []);
   return (
-    <div
-      className={`transition-opacity duration-[2s] ${
-        opacity ? "opacity-100" : "opacity-0"
-      }`}
-    >
+    <div>
       <Hero />
       <LeatestCollection />
       <BestSeller />

@@ -43,9 +43,13 @@ function AOSWrapper({ children }) {
 function App() {
   const [showSearch, setShowSearch] = useState(false);
     const [search, setSearch] = useState("");
+    const [opacity, setOpacity] = useState(false);
+      useEffect(() => setOpacity(true), []);
   
   return (
-    <div className="px-20  max-sm:px-5 max-sm:py-2">
+    <div  className={`transition-opacity duration-[1s] px-20  max-sm:px-5 max-sm:py-2 ${
+        opacity ? "opacity-100" : "opacity-0"
+      }`}>
       <BrowserRouter>
         <InitializeAOS />
         <AOSWrapper>

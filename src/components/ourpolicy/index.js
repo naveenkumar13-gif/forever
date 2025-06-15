@@ -8,7 +8,7 @@ function OurPolicy() {
         <img
           src={assets.exchange_icon}
           alt="exchangeIcon"
-          className="w-12 m-auto mb-5"
+          className="w-12 m-auto mb-5 hover:rotate-45 transition duration-150"
         />
         <p className="font-semibold text-2xl"> Easy Exchanges Policy</p>
         <p className="text-gray-600">
@@ -19,7 +19,7 @@ function OurPolicy() {
         <img
           src={assets.quality_icon}
           alt="exchangeIcon"
-          className="w-12 m-auto mb-5"
+          className="w-12 m-auto mb-5 hover:rotate-45 transition duration-150"
         />
         <p className="font-semibold text-2xl">7 days Return Policy </p>
         <p className="text-gray-600">
@@ -30,7 +30,7 @@ function OurPolicy() {
         <img
           src={assets.support_img}
           alt="exchangeIcon"
-          className="w-12 m-auto mb-5"
+          className="w-12 m-auto mb-5 hover:rotate-45 transition duration-150"
         />
         <p className="font-semibold text-2xl"> Best customer support</p>
         <p className="text-gray-600">
