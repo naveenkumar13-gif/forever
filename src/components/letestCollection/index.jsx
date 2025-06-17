@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Title from "../../components/title";
+import Title from "../title";
 import { products } from "../../assets/assets";
-import ProductItem from "../../components/productItem";
+import ProductItem from "../productItem";
 
 function LeatestCollection() {
   const [leatestProduct, setProducts] = useState([]);
