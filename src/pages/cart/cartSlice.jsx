@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cart: [],
+  size: "",
   successMessage: "Item added to cart successfully!",
 };
 
@@ -9,13 +10,19 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem(state, action) {
-      const itemid = action.payload.id;
-      const existingItem = state.cart.find((item) => item.id === itemid);
+      const {itemid ,size} = action.payload;
+
+      const existingItem = state.cart.find((item) => item.id === itemid && item.size === size);
       if (existingItem) {
         existingItem.quantity++;
         return;
       }
-      state.cart.push({ ...action.payload, quantity: 1 });
+
+      state.cart.push({
+        ...action.payload,
+        quantity: 1,
+        size: size,
+      });
       state.successMessage = "Item added to cart successfully!";
     },
     deleteItem(state, action) {

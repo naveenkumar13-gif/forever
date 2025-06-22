@@ -5,7 +5,6 @@ import RelatedProduct from "../../components/relatedProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../cart/cartSlice";
 import { message } from "antd";
-import useSelection from "antd/es/table/hooks/useSelection";
 
 function Product() {
   const dispatch = useDispatch();
@@ -26,7 +25,7 @@ function Product() {
     };
     fetchdata();
     console.log(cartItems);
-  }, [id]);
+  }, [id, cartItems]);
 
   const handleAddCart = (e) => {
     e.preventDefault();
@@ -51,6 +50,7 @@ function Product() {
       quantity: 1,
       price: productData.price,
       size: size,
+      image,
     };
 
     dispatch(addItem(newItem));
