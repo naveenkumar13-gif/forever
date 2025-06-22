@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { assets } from "../../assets/assets";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Navbar({ showSearch, setShowSearch }) {
+  const cartItems = useSelector((state) => state.cart.cart);
   const [visible, setVisible] = useState(false);
   return (
     <div className="flex justify-between items-center  font-medium max-sm:mt-4 my-5">
@@ -62,7 +64,7 @@ function Navbar({ showSearch, setShowSearch }) {
         <Link to={"/cart"} className="relative ">
           <img src={assets.cart_icon} alt="" className="w-5 cursor-pointer " />
           <p className="absolute  right-[-5px] bottom-[-5px] bg-black text-white leading-4 aspect-square rounded-full w-4  flex items-center justify-center text-xs">
-            0
+            {cartItems.length }
           </p>
         </Link>
         <img
