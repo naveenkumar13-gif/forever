@@ -45,7 +45,7 @@ function Product() {
       return;
     }
     const newItem = {
-      id: productData.id,
+      id: Math.floor(Math.random() * 100000000) + 1,
       name: productData.name,
       quantity: 1,
       price: productData.price,
