@@ -62,7 +62,7 @@ function Product() {
 
   return productData ? (
     <>
-      {contextHolder} {/* Ensure this is rendered */}
+      {contextHolder}
       <div className="border-t-2 py-10 transition-opacity ease-in duration-500 opacity-100">
         <div className="flex flex-col">
           <div className="flex gap-10 max-sm:gap-5 max-sm:flex-col-reverse">
