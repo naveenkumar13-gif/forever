@@ -27,16 +27,15 @@ const Cart = () => {
 
             <div className="">
               <p>{item.name}</p>
-              <div className="flex gap-4 items-center mt-2 max-sm:flex-col">
-                <p>${item.price * item.quantity}</p>
-                <p className="px-2 border sm:px-3 sm:py-1 bg-slate-50">
-                  {item.size}
-                </p>
-              </div>
+              <div className="flex gap-4 items-center mt-2 max-sm:flex-col"></div>
             </div>
+            <p className="px-2 border sm:px-3 sm:py-1 bg-slate-50">
+              {item.size}
+            </p>
             <div>
               <UpdateQuantity item={item} />
             </div>
+            <p>${item.price * item.quantity}</p>
             <img
               src={assets.bin_icon}
               alt=""
@@ -46,7 +45,7 @@ const Cart = () => {
           </div>
         ))}
       </div>
-      <CartTotal products={products} />
+      {products.length > 0 && <CartTotal products={products} />}
     </div>
   );
 };
