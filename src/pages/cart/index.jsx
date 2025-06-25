@@ -32,7 +32,7 @@ const Cart = () => {
 
               <div className="max-sm:flex max-sm:items-center max-sm:justify-between max-sm:gap-2 max-sm:w-[80%]">
                 <p className="max-sm:text-lg font-semibold">{item.name}</p>
-                <div className=" ">
+                <div className="hidden max-sm:block ">
                   <img
                     src={assets.bin_icon}
                     alt=""
@@ -41,13 +41,16 @@ const Cart = () => {
                   />
                 </div>
               </div>
-              <p className="px-2 border sm:px-3 sm:py-1 bg-slate-50 max-sm:text-2xl">
-                {item.size}
-              </p>
-              <div>
+              <div className="hidden max-md:block max-sm:flex  gap-4 w-[80%] justify-between">
+                <p className="px-2 border sm:px-3 sm:py-1 bg-slate-50 max-sm:text-2xl">
+                  {item.size}
+                </p>
                 <UpdateQuantity item={item} />
               </div>
-              <p className="font-semibold text-xl">
+              <div className="max-sm:hidden">
+                <UpdateQuantity item={item} />
+              </div>
+              <p className="font-semibold text-xl max-md:w-full max-sm:flex  max-sm:justify-end max-sm:text-3xl">
                 ${item.price * item.quantity}
               </p>
               <img
@@ -80,7 +83,7 @@ const Cart = () => {
             </div>
           )}
         </div>
-        {products.length > 0 && <CartTotal products={products} />}
+        {products.length ? <CartTotal products={products} /> : null}
       </div>
     </>
   );
