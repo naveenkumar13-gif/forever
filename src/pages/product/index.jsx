@@ -52,7 +52,7 @@ function Product() {
       size: size,
       image,
       Date: new Date().toLocaleDateString(),
-      time: new Date().toLocaleTimeString(),
+      time: new Date().toLocaleTimeString(),  
     };
 
     dispatch(addItem(newItem));

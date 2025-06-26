@@ -48,11 +48,14 @@ function Navbar({ showSearch, setShowSearch }) {
           onClick={() => setShowSearch(true)}
         />
         <div className="group relative">
+         <Link to={'/login'}>
           <img
             src={assets.profile_icon}
             alt=""
             className="w-5 cursor-pointer "
+           
           />
+         </Link>
           <div className="absolute hidden group-hover:block dropdown-menu pt-4 right-0">
             <div className="flex flex-col gap-2 p-4 w-36  bg-slate-50 rounded-md shadow-md">
               <p className="cursor-pointer hover:text-black">My profile</p>
