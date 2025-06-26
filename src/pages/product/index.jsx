@@ -51,9 +51,13 @@ function Product() {
       price: productData.price,
       size: size,
       image,
+      Date: new Date().toLocaleDateString(),
+      time: new Date().toLocaleTimeString(),
     };
 
     dispatch(addItem(newItem));
+    console.log("Item added to cart:", newItem);
+
     messageApi.success({
       content: "successfully added to cart",
       duration: 2,
