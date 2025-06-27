@@ -1,7 +1,6 @@
 import React from "react";
 import Title from "../../components/title";
 import { assets } from "../../assets/assets";
-import PlaceOrder from "../placeOrder";
 
 function About() {
   const style = 'border rounded- px-10 md:px-16 sm:py-20 flex flex-col gap-5 hover:transition-all hover:shadow-lg duration-300 hover:translate-y-2'

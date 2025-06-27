@@ -15,14 +15,13 @@ import "aos/dist/aos.css";
 import Footer from "./components/footer";
 import SearchBar from "./components/searchBar";
 
-
 function InitializeAOS() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
-      easing: "ease-in-out", 
-      once: false, 
-      disable: "mobile", 
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false,
+      disable: "mobile",
     });
   }, []);
 
@@ -42,19 +41,26 @@ function AOSWrapper({ children }) {
 
 function App() {
   const [showSearch, setShowSearch] = useState(false);
-    const [search, setSearch] = useState("");
-    const [opacity, setOpacity] = useState(false);
-      useEffect(() => setOpacity(true), []);
-  
+  const [search, setSearch] = useState("");
+  const [opacity, setOpacity] = useState(false);
+  useEffect(() => setOpacity(true), []);
+
   return (
-    <div  className={`transition-opacity duration-[1s] px-20  max-sm:px-5 max-sm:py-2 ${
+    <div
+      className={`transition-opacity duration-[1.5s] px-20  max-sm:px-5 max-sm:py-2   ${
         opacity ? "opacity-100" : "opacity-0"
-      }`}>
+      }`}
+    >
       <BrowserRouter>
         <InitializeAOS />
         <AOSWrapper>
           <Navbar showSearch={showSearch} setShowSearch={setShowSearch} />
-          <SearchBar showSearch={showSearch} setShowSearch={setShowSearch} search={search} setSearch={setSearch} />
+          <SearchBar
+            showSearch={showSearch}
+            setShowSearch={setShowSearch}
+            search={search}
+            setSearch={setSearch}
+          />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
