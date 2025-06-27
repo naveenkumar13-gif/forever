@@ -20,7 +20,7 @@ function Order() {
               <img src={item.image} alt={item.name} className="w-32 h-32 " />
               <div className="flex flex-col gap-1">
                 <p className="font-semibold sm:text-lg">{item.name}</p>
-                <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2">
+                <div className="flex flex-col sm:flex-row  gap-2">
                   <span className="text-gray-500">Price: </span>
                   <span className="text-gray-800 font-semibold text-xl">
                     ${item.price}
@@ -47,7 +47,9 @@ function Order() {
                 <p className="text-sm md-text-base">Ready to ship</p>
               </div>
             </div>
-            <button className="border border-gray-300 px-3 py-1 rounded-md font-medium">Track Order</button>
+            <button className="border border-gray-300 px-3 py-1 rounded-md font-medium">
+              Track Order
+            </button>
           </div>
         ))}
       </div>

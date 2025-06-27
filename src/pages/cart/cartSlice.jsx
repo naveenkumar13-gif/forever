@@ -36,14 +36,14 @@ const cartSlice = createSlice({
       const itemId = action.payload;
       const item = state.cart.find((item) => item.id === itemId);
       item.quantity++;
-      item.totalPrice = item.price * item.quantity; // Update total price if needed
+      item.totalPrice = item.price * item.quantity; 
       state.successMessage = "Item quantity increased successfully!";
     },
     decreaseItemQuantity(state, action) {
       const itemId = action.payload;
       const item = state.cart.find((item) => item.id === itemId);
       item.quantity--;
-      item.totalPrice = item.price * item.quantity; // Update total price if needed
+      item.totalPrice = item.price * item.quantity; 
       state.successMessage = "Item quantity decreased successfully!";
       if (item.quantity <= 0) {
         cartSlice.caseReducers.deleteItem(state, action);

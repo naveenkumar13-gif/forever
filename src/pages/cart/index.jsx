@@ -31,14 +31,17 @@ const Cart = () => {
               </div>
 
               <div className="max-sm:flex max-sm:items-center max-sm:justify-between max-sm:gap-2 max-sm:w-[80%]">
-                <p className="max-sm:text-lg font-semibold">{item.name}</p>
-                <div className="hidden max-sm:block ">
-                  <img
-                    src={assets.bin_icon}
-                    alt=""
-                    className="w-6 cursor-pointer max-sm:w-5"
-                    onClick={() => dispatch(deleteItem(item.id))}
-                  />
+                <div className="flex items-center gap-4 max-sm:w-full max-sm:justify-between">
+                  <p className="max-sm:text-lg font-semibold">{item.name}</p>
+
+                  <div className="hidden max-sm:block ">
+                    <img
+                      src={assets.bin_icon}
+                      alt=""
+                      className="w-6 cursor-pointer "
+                      onClick={() => dispatch(deleteItem(item.id))}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="hidden max-md:block max-sm:flex  gap-4 w-[80%] justify-between">
@@ -47,6 +50,9 @@ const Cart = () => {
                 </p>
                 <UpdateQuantity item={item} />
               </div>
+              <p className="px-2 border sm:px-3 sm:py-1 bg-slate-50 max-sm:text-2xl max-sm:hidden">
+                {item.size}
+              </p>
               <div className="max-sm:hidden">
                 <UpdateQuantity item={item} />
               </div>
