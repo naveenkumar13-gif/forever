@@ -7,7 +7,7 @@ function Navbar({ showSearch, setShowSearch }) {
   const cartItems = useSelector((state) => state.cart.cart);
   const [visible, setVisible] = useState(false);
   return (
-    <div className="flex justify-between items-center  font-medium max-sm:mt-4 my-5">
+    <div className="flex justify-between items-center  font-medium max-sm:mt-4 my-5 ">
       <div>
         <Link to={"/"}>
           <img src={assets.logo} alt="Logo" className="w-36 max-sm:w-24" />
@@ -48,14 +48,13 @@ function Navbar({ showSearch, setShowSearch }) {
           onClick={() => setShowSearch(true)}
         />
         <div className="group relative">
-         <Link to={'/login'}>
-          <img
-            src={assets.profile_icon}
-            alt=""
-            className="w-5 cursor-pointer "
-           
-          />
-         </Link>
+          <Link to={"/login"}>
+            <img
+              src={assets.profile_icon}
+              alt=""
+              className="w-5 cursor-pointer "
+            />
+          </Link>
           <div className="absolute hidden group-hover:block dropdown-menu pt-4 right-0">
             <div className="flex flex-col gap-2 p-4 w-36  bg-slate-50 rounded-md shadow-md">
               <p className="cursor-pointer hover:text-black">My profile</p>
@@ -67,7 +66,7 @@ function Navbar({ showSearch, setShowSearch }) {
         <Link to={"/cart"} className="relative ">
           <img src={assets.cart_icon} alt="" className="w-5 cursor-pointer " />
           <p className="absolute  right-[-5px] bottom-[-5px] bg-black text-white leading-4 aspect-square rounded-full w-4  flex items-center justify-center text-xs">
-            {cartItems.length }
+            {cartItems.length}
           </p>
         </Link>
         <img
